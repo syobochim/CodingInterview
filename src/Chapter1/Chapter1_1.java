@@ -3,7 +3,7 @@ package Chapter1;
 /**
  * Created by mizuki on 2014/04/08.
  */
-public class Main {
+public class Chapter1_1 {
 
     public static boolean isUniqueChars(String target) {
 /*
@@ -18,7 +18,8 @@ public class Main {
         return true;
 */
 
-/*        boolean[] char_set = new boolean[256];
+/*
+        boolean[] char_set = new boolean[256];
         for(int i = 0;i < target.length(); i++){
             int val = target.charAt(i);
             if(char_set[val]){
@@ -29,14 +30,12 @@ public class Main {
         return true;
 */
 
-
         char[] charsInString = target.toCharArray();
-        for(int i = 0; i < target.length(); i++){
-            if(i != target.indexOf(charsInString[i])){
+        for (int i = 0; i < target.length(); i++) {
+            if (i != target.indexOf(charsInString[i])) {
                 return false;
             }
         }
         return true;
-
     }
 }
