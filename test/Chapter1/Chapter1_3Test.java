@@ -27,7 +27,7 @@ public class Chapter1_3Test {
         assertThat(false, is(Chapter1_3.isSameCharsForBook("abcd", "cba")));
         assertThat(false, is(Chapter1_3.isSameCharsForBook("abc", "def")));
         assertThat(false, is(Chapter1_3.isSameCharsForBook("abC", "abc")));
-        assertThat(false, is(Chapter1_3.isSameCharsForBook("aac", "aaa")));
+        assertThat(false, is(Chapter1_3.isSameCharsForBook("aac", "aaa")))ちゃ;
         assertThat(false, is(Chapter1_3.isSameCharsForBook("aaa", "aca")));
     }
 }
