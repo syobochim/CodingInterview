@@ -1,24 +1,23 @@
 package Chapter1;
 
-import junit.framework.TestCase;
+import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by mizuki on 2014/04/08.
  */
-public class MainTest extends TestCase {
+public class MainTest {
 
-    public MainTest(String name){
-        super(name);
+    @Test
+    public void 文字列に含まれる文字がすべて一意であるか() throws Exception{
+        assertTrue(Main.isUniqueChars("ab"));
+        assertTrue(Main.isUniqueChars("abc"));
+        assertFalse(Main.isUniqueChars("aa"));
+        assertFalse(Main.isUniqueChars("abb"));
+        assertFalse(Main.isUniqueChars("aba"));
+        assertFalse(Main.isUniqueChars("qwertyuiopasdfghjklzxcvbnmq"));
     }
 
-    public static void testHasUniqueCharsString() throws Exception{
-        Main targetClass = new Main();
-        assertTrue(targetClass.hasUniqueChar("a"));
-        assertTrue(targetClass.hasUniqueChar("ab"));
-        assertTrue(targetClass.hasUniqueChar("abc"));
-        assertFalse(targetClass.hasUniqueChar("aa"));
-        assertFalse(targetClass.hasUniqueChar("abb"));
-        assertFalse(targetClass.hasUniqueChar("aba"));
-        assertFalse(targetClass.hasUniqueChar("aab"));
-    }
 }
