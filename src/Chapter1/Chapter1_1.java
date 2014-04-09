@@ -17,7 +17,6 @@ public class Chapter1_1 {
         }
         return true;
 */
-
 /*
         boolean[] char_set = new boolean[256];
         for(int i = 0;i < target.length(); i++){
@@ -29,7 +28,6 @@ public class Chapter1_1 {
         }
         return true;
 */
-
         char[] charsInString = target.toCharArray();
         for (int i = 0; i < target.length(); i++) {
             if (i != target.indexOf(charsInString[i])) {
