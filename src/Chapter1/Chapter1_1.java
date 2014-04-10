@@ -28,6 +28,7 @@ public class Chapter1_1 {
         }
         return true;
 */
+/*
         char[] charsInString = target.toCharArray();
         for (int i = 0; i < target.length(); i++) {
             if (i != target.indexOf(charsInString[i])) {
@@ -35,5 +36,7 @@ public class Chapter1_1 {
             }
         }
         return true;
+*/
+        return target.chars().distinct().count() == target.length();
     }
 }
