@@ -11,23 +11,59 @@ import static org.junit.Assert.assertThat;
 public class Chapter1_3Test {
 
     @Test
-    public void 二つの文字列の構成要素が同じであるか(){
-        assertThat(true, is(Chapter1_3.isSameChars("abc", "cba")));
-        assertThat(true, is(Chapter1_3.isSameChars("abc", "abc")));
-        assertThat(false, is(Chapter1_3.isSameChars("abc", "cdba")));
-        assertThat(false, is(Chapter1_3.isSameChars("abc", "def")));
-        assertThat(false, is(Chapter1_3.isSameChars("abC", "abc")));
+    public void 二つの文字列の構成要素が同じ場合は真となること() {
+        assertThat(Chapter1_3.isSameChars("abc", "cba"), is(true));
     }
 
     @Test
-    public void 二つの文字列の構成要素が同じであるか_本のアルゴリズム(){
-        assertThat(true, is(Chapter1_3.isSameCharsForBook("abc", "cba")));
-        assertThat(true, is(Chapter1_3.isSameCharsForBook("abc", "abc")));
-        assertThat(false, is(Chapter1_3.isSameCharsForBook("abc", "cdba")));
-        assertThat(false, is(Chapter1_3.isSameCharsForBook("abcd", "cba")));
-        assertThat(false, is(Chapter1_3.isSameCharsForBook("abc", "def")));
-        assertThat(false, is(Chapter1_3.isSameCharsForBook("abC", "abc")));
-        assertThat(false, is(Chapter1_3.isSameCharsForBook("aac", "aaa")))ちゃ;
-        assertThat(false, is(Chapter1_3.isSameCharsForBook("aaa", "aca")));
+    public void 二つの文字列の構成要素が異なる場合は偽となること() {
+        assertThat(Chapter1_3.isSameChars("abc", "def"), is(false));
     }
+
+    @Test
+    public void 大文字と小文字が異なる場合は偽となること() {
+        assertThat(Chapter1_3.isSameChars("abC", "abc"), is(false));
+    }
+
+    @Test
+    public void マルチバイトの二つの文字列の構成要素が同じ場合は真となること() {
+        assertThat(Chapter1_3.isSameChars("あいう", "うあい"), is(true));
+    }
+
+    @Test
+    public void マルチバイトの二つの文字列の構成要素が異なる場合は偽となること() {
+        assertThat(Chapter1_3.isSameChars("あいう", "うあお"), is(false));
+    }
+
+    @Test
+    public void 二つの文字列の構成要素が同じ場合は真となること_本のアルゴリズム() {
+        assertThat(Chapter1_3.isSameCharsForBook("abc", "cba"), is(true));
+    }
+
+    @Test
+    public void 二つの文字列の構成要素が異なる場合は偽となること_本のアルゴリズム() {
+        assertThat(Chapter1_3.isSameCharsForBook("abc", "def"), is(false));
+    }
+
+    @Test
+    public void 大文字と小文字が異なる場合は偽となること_本のアルゴリズム() {
+        assertThat(Chapter1_3.isSameCharsForBook("abC", "abc"), is(false));
+    }
+
+/*
+    ASCⅡを想定しているため、マルチバイトのテストは実施しない
+    @Test
+    public void マルチバイトの二つの文字列の構成要素が同じ場合は真となること_本のアルゴリズム() {
+        assertThat(Chapter1_3.isSameCharsForBook("あいう", "うあい"), is(true));
+    }
+*/
+
+/*
+    ASCⅡを想定しているため、マルチバイトのテストは実施しない
+    @Test
+    public void マルチバイトの二つの文字列の構成要素が異なる場合は偽となること_本のアルゴリズム() {
+        assertThat(Chapter1_3.isSameCharsForBook("あいう", "うあお"), is(true));
+    }
+*/
+
 }

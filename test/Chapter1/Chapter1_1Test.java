@@ -10,7 +10,7 @@ import static org.junit.Assert.assertThat;
  */
 public class Chapter1_1Test {
     
-        @Test
+    @Test
     public void 同一の文字が含まれない場合は真となること() {
         assertThat(Chapter1_1.isUniqueChars("ABCDEFG"), is(true));
     }
