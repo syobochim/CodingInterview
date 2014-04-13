@@ -9,6 +9,10 @@ public class Chapter1_4 {
         return target.replaceAll("\\s+$", "").replaceAll("\\s", "%20");
     }
 
+    public static void encodeSpacesUseStringBuffer(StringBuffer target) {
+        target.replace(0, target.length(), encodeSpaces(target.toString()));
+    }
+
     public static void encodeSpacesForBooks(char[] target, int length) {
         int spaceCount = 0, newLength, i = 0;
         for (i = 0; i < length; i++) {
@@ -30,4 +34,5 @@ public class Chapter1_4 {
             }
         }
     }
+
 }
