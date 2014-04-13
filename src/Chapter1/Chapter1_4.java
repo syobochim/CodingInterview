@@ -6,7 +6,7 @@ package Chapter1;
 public class Chapter1_4 {
 
     public static String encodeSpaces(String target) {
-        return target.replaceAll("\\s+$", "").replaceAll("\\s", "%20");
+        return target.trim().replaceAll("\\s", "%20");
     }
 
     public static void encodeSpacesUseStringBuffer(StringBuffer target) {
