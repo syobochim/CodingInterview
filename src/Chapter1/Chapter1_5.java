@@ -5,17 +5,15 @@ package Chapter1;
  */
 public class Chapter1_5 {
     public static String compressString(String target) {
-        char[] targetChars = target.toCharArray();
         StringBuilder resultStringBuilder = new StringBuilder();
 
-        for (int i = 0; i < targetChars.length; i++) {
+        for (int i = 0; i < target.length(); i++) {
             int sameCharCounter = 1;
-            for (int j = i + 1; j < target.length(); j++) {
-                if (targetChars[i] != targetChars[j]) break;
+            while (i < target.length() - 1 && target.charAt(i) == target.charAt(i + 1)) {
                 sameCharCounter++;
-                i = j;
+                i++;
             }
-            resultStringBuilder.append(targetChars[i]);
+            resultStringBuilder.append(target.charAt(i));
             resultStringBuilder.append(sameCharCounter);
         }
 
