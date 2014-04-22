@@ -5,9 +5,6 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by mizuki on 2014/04/13.
- */
 public class Chapter1_5Test {
 
 //    テストを削除

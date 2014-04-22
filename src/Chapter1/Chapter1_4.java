@@ -2,9 +2,6 @@ package Chapter1;
 
 import java.nio.CharBuffer;
 
-/**
- * Created by mizuki on 2014/04/13.
- */
 public class Chapter1_4 {
 
     public static String encodeSpaces(String target) {
@@ -46,9 +43,7 @@ public class Chapter1_4 {
         CharBuffer charBuffer = CharBuffer.allocate(encodedCharLength);
         for (int i = 0; i < trueLength; i++) {
             if (chars[i] == ' ') {
-                charBuffer.append('%');
-                charBuffer.append('2');
-                charBuffer.append('0');
+                charBuffer.append("%20");
             } else {
                 charBuffer.append(chars[i]);
             }
