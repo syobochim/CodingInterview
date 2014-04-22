@@ -2,9 +2,6 @@ package Chapter1;
 
 import java.util.Arrays;
 
-/**
- * Created by mizuki on 2014/04/10.
- */
 public class Chapter1_3 {
 
     public static boolean isSameChars(String str1, String str2) {

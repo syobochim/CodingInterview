@@ -1,8 +1,5 @@
 package Chapter1;
 
-/**
- * Created by mizuki on 2014/04/08.
- */
 public class Chapter1_1 {
 
     public static boolean isUniqueChars(String target) {

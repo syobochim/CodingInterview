@@ -1,8 +1,5 @@
 package Chapter1;
 
-/**
- * Created by mizuki on 2014/04/13.
- */
 public class Chapter1_5 {
     public static String compressString(String target) {
         StringBuilder resultStringBuilder = new StringBuilder();
