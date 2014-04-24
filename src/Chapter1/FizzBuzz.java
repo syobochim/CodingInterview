@@ -1,22 +1,22 @@
 package Chapter1;
 
 public class FizzBuzz {
-    public String convert(int src) {
+    public String convert(int number) {
 
-        if(multiply(src, 3 * 5)) {
+        if(isDivisible(number, 3 * 5)) {
             return "FizzBuzz";
         }
-        if(multiply(src, 3)){
+        if(isDivisible(number, 3)){
             return "Fizz";
         }
-        if(multiply(src, 5)) {
+        if(isDivisible(number, 5)) {
             return "Buzz";
         }
 
-        return String.valueOf(src);
+        return String.valueOf(number);
     }
 
-    private boolean multiply(int src, int base) {
+    private boolean isDivisible(int src, int base) {
         return src % base == 0;
     }
 
