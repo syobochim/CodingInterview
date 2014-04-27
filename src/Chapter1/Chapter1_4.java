@@ -1,6 +1,9 @@
 package Chapter1;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.nio.CharBuffer;
+import java.util.Arrays;
 
 public class Chapter1_4 {
 
@@ -34,7 +37,7 @@ public class Chapter1_4 {
         }
     }
 
-    public static char[] encodeSpacesUserCharArray(char[] chars, int trueLength) {
+    public static char[] encodeSpacesUseCharArray(char[] chars, int trueLength) {
         int encodedCharLength = trueLength;
         for (int i = 0; i < trueLength; i++) {
             if (chars[i] == ' ') encodedCharLength += 2;
@@ -50,4 +53,25 @@ public class Chapter1_4 {
         }
         return charBuffer.array();
     }
+
+    public static String encodeSpacesUseRamda(char[] chars, int trueLength) {
+        Character[] characters = ArrayUtils.toObject(chars);
+
+        int encodedCharLength = trueLength + ((int) Arrays.asList(characters)
+                .stream()
+                .filter(s -> s.equals(' '))
+                .count() * 2);
+
+        CharBuffer charBuffer = CharBuffer.allocate(encodedCharLength);
+        for (int i = 0; i < trueLength; i++) {
+            if (chars[i] == ' ') {
+                charBuffer.append("%20");
+            } else {
+                charBuffer.append(chars[i]);
+            }
+        }
+       charBuffer.flip();
+        return charBuffer.toString();
+    }
+
 }

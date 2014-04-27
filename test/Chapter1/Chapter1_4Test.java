@@ -21,8 +21,14 @@ public class Chapter1_4Test {
 
     @Test
     public void 文字列中のスペースをエンコードし末尾のスペースを削除している場合は真となること_文字配列版() {
-        assertThat(Chapter1_4.encodeSpacesUserCharArray("Mr John Smith    ".toCharArray(), 13),
+        assertThat(Chapter1_4.encodeSpacesUseCharArray("Mr John Smith    ".toCharArray(), 13),
                 is("Mr%20John%20Smith".toCharArray()));
+    }
+
+    @Test
+    public void 文字列中のスペースをエンコードし末尾のスペースを削除している場合は真となること_ラムダ使用版() {
+        assertThat(Chapter1_4.encodeSpacesUseRamda("Mr John Smith    ".toCharArray(), 13),
+                is("Mr%20John%20Smith"));
     }
 
     @Test
