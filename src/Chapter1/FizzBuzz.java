@@ -1,22 +1,28 @@
 package Chapter1;
 
 public class FizzBuzz {
-    public String convert(int src) {
 
-        if(multiply(src, 3 * 5)) {
-            return "FizzBuzz";
+    private static final int FIZZ_NUMBER = 3;
+    private static final int BUZZ_NUMBER = 5;
+    private static final String FIZZ_TEXT = "Fizz";
+    private static final String BUZZ_TEXT = "Buzz";
+
+    public String convert(int number) {
+
+        if(isDivisible(number, FIZZ_NUMBER * BUZZ_NUMBER)) {
+            return FIZZ_TEXT + BUZZ_TEXT;
         }
-        if(multiply(src, 3)){
-            return "Fizz";
+        if(isDivisible(number, FIZZ_NUMBER)){
+            return FIZZ_TEXT;
         }
-        if(multiply(src, 5)) {
-            return "Buzz";
+        if(isDivisible(number, BUZZ_NUMBER)) {
+            return BUZZ_TEXT;
         }
 
-        return String.valueOf(src);
+        return String.valueOf(number);
     }
 
-    private boolean multiply(int src, int base) {
+    private boolean isDivisible(int src, int base) {
         return src % base == 0;
     }
 
