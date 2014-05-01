@@ -1,0 +1,21 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+version = '1.0'
+
+ext {
+  encoding = 'utf-8'
+}
+
+compileJava.options.encoding = encoding
+compileTestJava.options.encoding = encoding
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  compile 'org.apache.commons:commons-lang3:+'
+  testCompile 'junit:junit:+'
+}
