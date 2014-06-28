@@ -17,11 +17,11 @@ public class Chapter1_6Test {
 
     @Test
     public void 大きさが3x3の画像を入力したとき変換後の画像サイズが3x3になること() throws Exception {
-        int[][] expected = Chapter1_6.turnImage(target, 3);
-        assertThat(expected.length, is(3));
-        assertThat(expected[0].length, is(3));
-        assertThat(expected[1].length, is(3));
-        assertThat(expected[2].length, is(3));
+        int[][] actual = Chapter1_6.turnImage(target, 3);
+        assertThat(actual.length, is(3));
+        assertThat(actual[0].length, is(3));
+        assertThat(actual[1].length, is(3));
+        assertThat(actual[2].length, is(3));
     }
 
     /**
@@ -32,9 +32,9 @@ public class Chapter1_6Test {
      */
     @Test
     public void 行列の中身が90度右に回転されていること() throws Exception {
-        int[][] expected = Chapter1_6.turnImage(target, 3);
-        assertThat(expected[0], is(new int[]{31, 21, 11}));
-        assertThat(expected[1], is(new int[]{32, 22, 12}));
-        assertThat(expected[2], is(new int[]{33, 23, 13}));
+        int[][] actual = Chapter1_6.turnImage(target, 3);
+        assertThat(actual[0], is(new int[]{31, 21, 11}));
+        assertThat(actual[1], is(new int[]{32, 22, 12}));
+        assertThat(actual[2], is(new int[]{33, 23, 13}));
     }
 }
